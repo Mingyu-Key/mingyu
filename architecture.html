@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作品架构 & 设计思路 · 阁主</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="description" content="16 个电商 ERP / AI 子系统 + OpenClaw 多 Agent 调度，AI + ERP 双引擎的企业渐进式转型方案。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="作品架构 & 设计思路 · 阁主" />
+  <meta property="og:description" content="16 个电商 ERP / AI 子系统 + OpenClaw 多 Agent 调度，AI + ERP 双引擎的企业渐进式转型方案。" />
+  <meta property="og:image" content="assets/og-image.svg" />
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="architecture">
+
+  <!-- ====== HERO (AI + ERP 双引擎) ====== -->
+  <section class="arch-hero">
+    <div class="container">
+      <div class="arch-hero__inner" data-reveal>
+        <a class="cat-hero__back" href="index.html">← 返回首页</a>
+        <span class="section__eyebrow">AI + ERP · 架构与思路</span>
+        <h1 class="arch-hero__title">
+          <span class="arch-hero__title-ai">AI</span> + <span class="arch-hero__title-erp">ERP</span>
+          <span class="arch-hero__title-sub">企业渐进式转型的最优解</span>
+        </h1>
+        <p class="arch-hero__sub">
+          16 个子系统 + <strong>OpenClaw 多 Agent 调度</strong>，把"AI 的灵活"和"ERP 的稳"绑在一起。
+          <strong>不一步到位</strong>，先单点跑通再联动，业务效果立竿见影，转型阻力降到最低。
+        </p>
+        <ul class="arch-hero__value">
+          <li>
+            <span class="arch-hero__value-icon" style="--c:#2563eb" data-icon="zap"></span>
+            <div>
+              <strong>渐进式落地</strong>
+              <span>6 大模块独立可上线，单模块 2-4 周见效</span>
+            </div>
+          </li>
+          <li>
+            <span class="arch-hero__value-icon" style="--c:#2563eb" data-icon="bot"></span>
+            <div>
+              <strong>多 Agent 调度</strong>
+              <span>员工跟 AI 说话就行，不用学系统界面</span>
+            </div>
+          </li>
+          <li>
+            <span class="arch-hero__value-icon" style="--c:#2563eb" data-icon="trending-up"></span>
+            <div>
+              <strong>立即产出收益</strong>
+              <span>5802/5810 实时衡量 ROI，上线当天见效</span>
+            </div>
+          </li>
+          <li>
+            <span class="arch-hero__value-icon" style="--c:#2563eb" data-icon="sparkles"></span>
+            <div>
+              <strong>可塑可拓</strong>
+              <span>业务变了，Agent 跟着变，无需重构系统</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 核心理念 (Why): 3 大死结 ====== -->
+  <section class="arch-why">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">WHY · 为什么是 AI + ERP</span>
+        <h2 class="section__title">企业转型的 3 个死结，AI + ERP 一次解</h2>
+        <p class="section__desc">传统 ERP 改造的 3 大阻力：一步到位做不到、员工抗拒、ROI 算不清。AI + ERP 双引擎的组合刚好能解。</p>
+      </header>
+
+      <div class="arch-why-grid" data-reveal>
+        <article class="arch-why-card arch-why-card--blue">
+          <div class="arch-why-card__icon" data-icon="target"></div>
+          <div class="arch-why-card__num">死结 01</div>
+          <h3>一步到位的转型做不到</h3>
+          <p>大厂 ERP 改造动辄 1-2 年、几百万投入，中小企业根本耗不起。</p>
+          <div class="arch-why-card__fix">
+            <div class="arch-why-card__fix-label">解法</div>
+            <p>6 大独立模块替代"全栈改造"——选哪个先用哪个，<strong>单模块 2-4 周就能上线</strong>，跑通再联动。</p>
+          </div>
+        </article>
+
+        <article class="arch-why-card arch-why-card--purple">
+          <div class="arch-why-card__icon" data-icon="zap"></div>
+          <div class="arch-why-card__num">死结 02</div>
+          <h3>员工用不起来</h3>
+          <p>传统 ERP 培训成本高，员工抗拒新系统——再好的功能也落不了地。</p>
+          <div class="arch-why-card__fix">
+            <div class="arch-why-card__fix-label">解法</div>
+            <p>OpenClaw 多 Agent 替代"操作手册"——员工直接跟 AI 说话：<em>"这个月的对账出来了吗"</em>，Agent 自动调子系统拉数据。</p>
+          </div>
+        </article>
+
+        <article class="arch-why-card arch-why-card--green">
+          <div class="arch-why-card__icon" data-icon="trending-up"></div>
+          <div class="arch-why-card__num">死结 03</div>
+          <h3>ROI 算不清</h3>
+          <p>传统 ERP 投资要等全部上线后才能验证，老板心里没底，不敢批。</p>
+          <div class="arch-why-card__fix">
+            <div class="arch-why-card__fix-label">解法</div>
+            <p>5802 五部曲 + 5810 经营看板实时衡量每个 Agent 节省的人力、提升的效率，<strong>模块上线当天就能看到数字</strong>。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== OpenClaw 多 Agent 调度架构 (How) ====== -->
+  <section class="arch-agents">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">HOW · 怎么落地</span>
+        <h2 class="section__title">OpenClaw 多 Agent 调度架构</h2>
+        <p class="section__desc">每个子系统配一个专属 Agent，总 Agent 负责跨模块编排。员工不用学系统，跟 Agent 说话就行。</p>
+      </header>
+
+      <div class="arch-agents-stack" data-reveal>
+        <div class="arch-agents-layer arch-agents-layer--users">
+          <div class="arch-agents-layer__head">
+            <span class="arch-agents-layer__badge">L1</span>
+            <div>
+              <h3>用户层：一线员工</h3>
+              <p>运营 / 采购 / 助理 / 财务 / 客服 各自的日常工作场景</p>
+            </div>
+          </div>
+          <div class="arch-agents-chips">
+            <span class="arch-agents-chip">运营</span>
+            <span class="arch-agents-chip">采购</span>
+            <span class="arch-agents-chip">助理</span>
+            <span class="arch-agents-chip">财务</span>
+            <span class="arch-agents-chip">客服</span>
+            <span class="arch-agents-chip">老板/管理者</span>
+          </div>
+        </div>
+
+        <div class="arch-agents-arrow" data-icon="arrow-down"></div>
+
+        <div class="arch-agents-layer arch-agents-layer--orchestrator">
+          <div class="arch-agents-layer__head">
+            <span class="arch-agents-layer__badge arch-agents-layer__badge--hot">L2</span>
+            <div>
+              <h3>总 Agent · 编排者（OpenClaw Orchestrator）</h3>
+              <p>理解员工自然语言意图 → 拆解任务 → 分派给业务 Agent → 汇总结果反馈</p>
+            </div>
+          </div>
+          <div class="arch-agents-core">
+            <div class="arch-agents-core__icon" data-icon="brain"></div>
+            <div class="arch-agents-core__text">
+              <strong>OpenClaw Orchestrator</strong>
+              <span>理解 / 拆解 / 分派 / 汇总 · 多步任务自动串联</span>
+            </div>
+            <div class="arch-agents-core__tag">LLM + 工具调用</div>
+          </div>
+        </div>
+
+        <div class="arch-agents-arrow" data-icon="arrow-down"></div>
+
+        <div class="arch-agents-layer arch-agents-layer--biz">
+          <div class="arch-agents-layer__head">
+            <span class="arch-agents-layer__badge">L3</span>
+            <div>
+              <h3>业务 Agent × 6</h3>
+              <p>每个 Agent 对应一个业务模块，封装该模块的所有 API + 业务知识 + 提示词</p>
+            </div>
+          </div>
+          <div class="arch-agents-biz-grid">
+            <div class="arch-agents-biz" data-biz="picking">
+              <div class="arch-agents-biz__icon" data-icon="target"></div>
+              <div class="arch-agents-biz__name">选品 Agent</div>
+              <div class="arch-agents-biz__desc">21 步决策树 / 商机数据 / 选品 SOP</div>
+            </div>
+            <div class="arch-agents-biz" data-biz="planning">
+              <div class="arch-agents-biz__icon" data-icon="search"></div>
+              <div class="arch-agents-biz__name">匹配 Agent</div>
+              <div class="arch-agents-biz__desc">市场数据 / 商品负责人 / 上新池</div>
+            </div>
+            <div class="arch-agents-biz" data-biz="listing">
+              <div class="arch-agents-biz__icon" data-icon="trending-up"></div>
+              <div class="arch-agents-biz__name">上架 Agent</div>
+              <div class="arch-agents-biz__desc">运营面板 / 链接状态 / CBAS 等级</div>
+            </div>
+            <div class="arch-agents-biz" data-biz="fulfillment">
+              <div class="arch-agents-biz__icon" data-icon="truck"></div>
+              <div class="arch-agents-biz__name">发货 Agent</div>
+              <div class="arch-agents-biz__desc">代发工单 / 补单费用 / 客服协同</div>
+            </div>
+            <div class="arch-agents-biz" data-biz="finance">
+              <div class="arch-agents-biz__icon" data-icon="scale"></div>
+              <div class="arch-agents-biz__name">财务 Agent</div>
+              <div class="arch-agents-biz__desc">对账 / 成本版本 / 大店金额</div>
+            </div>
+            <div class="arch-agents-biz" data-biz="dataops">
+              <div class="arch-agents-biz__icon" data-icon="bar-chart-3"></div>
+              <div class="arch-agents-biz__name">数据 Agent</div>
+              <div class="arch-agents-biz__desc">五部曲 / 经营看板 / 售后监控</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-agents-arrow" data-icon="arrow-down"></div>
+
+        <div class="arch-agents-layer arch-agents-layer--subs">
+          <div class="arch-agents-layer__head">
+            <span class="arch-agents-layer__badge arch-agents-layer__badge--solid">L4</span>
+            <div>
+              <h3>子系统层：5801-5816 ERP 系统</h3>
+              <p>原 16 个子系统，提供 REST API + 数据库访问 + 业务逻辑——稳定可靠</p>
+            </div>
+          </div>
+          <div class="arch-agents-subs">
+            <code>5801</code><code>5802</code><code>5803</code><code>5805</code><code>5806</code><code>5807</code><code>5808</code><code>5809</code><code>5810</code><code>5811</code><code>5812</code><code>5813</code><code>5815</code><code>5816</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 系统全景图 (What): 6 模块 + 1 中枢 (简化版) ====== -->
+  <section class="arch-diagram-section">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">WHAT · 系统全景</span>
+        <h2 class="section__title">6 大业务模块 + 1 个数据中枢</h2>
+        <p class="section__desc">覆盖电商业务全链路。每个模块独立可上线、可 Agent 化、可单点验证 ROI。</p>
+      </header>
+
+      <div class="arch-canvas" id="archCanvas" data-reveal>
+        <article class="arch-node" data-node="picking" data-flow-keys="1,6,7,8" style="grid-area: 1 / 1">
+          <div class="arch-node__num">01</div>
+          <h3 class="arch-node__title">选品企划</h3>
+          <p class="arch-node__desc">结构化选品决策，数据驱动</p>
+          <div class="arch-node__tag" style="--c: #2563eb">PICKING</div>
+        </article>
+
+        <div class="arch-flow" data-flow-keys="1" style="grid-area: 1 / 2">
+          <span class="arch-flow__icon">→</span>
+          <span class="arch-flow__label">选品结果</span>
+        </div>
+
+        <article class="arch-node" data-node="planning" data-flow-keys="1,2,8" style="grid-area: 1 / 3">
+          <div class="arch-node__num">02</div>
+          <h3 class="arch-node__title">匹配企划</h3>
+          <p class="arch-node__desc">商品匹配与上新池管理</p>
+          <div class="arch-node__tag" style="--c: #2563eb">PLANNING</div>
+        </article>
+
+        <div class="arch-flow" data-flow-keys="2" style="grid-area: 1 / 4">
+          <span class="arch-flow__icon">→</span>
+          <span class="arch-flow__label">候选商品</span>
+        </div>
+
+        <article class="arch-node" data-node="listing" data-flow-keys="2,3,8" style="grid-area: 1 / 5">
+          <div class="arch-node__num">03</div>
+          <h3 class="arch-node__title">自动上架</h3>
+          <p class="arch-node__desc">运营工作台 + 链接管理</p>
+          <div class="arch-node__tag" style="--c: #2563eb">LISTING</div>
+        </article>
+
+        <article class="arch-node" data-node="fulfillment" data-flow-keys="5,7,8" style="grid-area: 2 / 1">
+          <div class="arch-node__num">04</div>
+          <h3 class="arch-node__title">发货管控</h3>
+          <p class="arch-node__desc">代发工单 + 客服协同</p>
+          <div class="arch-node__tag" style="--c: #2563eb">FULFILLMENT</div>
+        </article>
+
+        <div class="arch-flow" data-flow-keys="5" style="grid-area: 2 / 2">
+          <span class="arch-flow__icon">→</span>
+          <span class="arch-flow__label">退款 / 补单</span>
+        </div>
+
+        <article class="arch-node" data-node="finance" data-flow-keys="4,5,6,8" style="grid-area: 2 / 3">
+          <div class="arch-node__num">05</div>
+          <h3 class="arch-node__title">财务中枢</h3>
+          <p class="arch-node__desc">对账 + 成本 + 大店金额</p>
+          <div class="arch-node__tag" style="--c: #2563eb">FINANCE</div>
+        </article>
+
+        <div class="arch-flow" data-flow-keys="4" style="grid-area: 2 / 4">
+          <span class="arch-flow__icon">→</span>
+          <span class="arch-flow__label">毛利数据</span>
+        </div>
+
+        <article class="arch-node" data-node="dataops" data-flow-keys="3,4,8" style="grid-area: 2 / 5">
+          <div class="arch-node__num">06</div>
+          <h3 class="arch-node__title">数据运营</h3>
+          <p class="arch-node__desc">经营分析 + 监控预警</p>
+          <div class="arch-node__tag" style="--c: #2563eb">DATAOPS</div>
+        </article>
+
+        <div class="arch-center" data-node="center" data-flow-keys="8" style="grid-area: 3 / 1 / 3 / 6">
+          <div class="arch-center__core">
+            <div class="arch-center__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>
+              </svg>
+            </div>
+            <div class="arch-center__text">
+              <div class="arch-center__label">数据中枢</div>
+              <div class="arch-center__sub">统一登录 / 权限 / 公告</div>
+            </div>
+            <div class="arch-center__port">5801</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 业务提效 (Impact): 6 模块提效对比 ====== -->
+  <section class="arch-impact">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">IMPACT · 业务提效</span>
+        <h2 class="section__title">从传统到 AI，每个模块的提效</h2>
+        <p class="section__desc">不是空话，是真实工作场景前后的对比。看看同样的活，现在能省多少时间。</p>
+      </header>
+
+      <div class="arch-impact-grid" data-reveal>
+        <article class="arch-impact-card" data-biz="picking">
+          <div class="arch-impact-card__head">
+            <div class="arch-impact-card__icon" data-icon="target"></div>
+            <h3>选品企划</h3>
+            <span class="arch-impact-card__tag">PICKING</span>
+          </div>
+          <div class="arch-impact-card__compare">
+            <div class="arch-impact-card__before">
+              <div class="arch-impact-card__label">传统</div>
+              <p>1 个选品员 <strong>1 周</strong> 选 5-10 个款，靠经验和老板眼光，新人无法接手</p>
+            </div>
+            <div class="arch-impact-card__arrow" data-icon="arrow-right"></div>
+            <div class="arch-impact-card__after">
+              <div class="arch-impact-card__label arch-impact-card__label--ok">AI 之后</div>
+              <p>21 步决策树，1 人 <strong>1 天</strong> 初筛 100+ 款，CBAS 自动评级，新人也能跑</p>
+            </div>
+          </div>
+          <div class="arch-impact-card__metric">
+            <strong>10×</strong>
+            <span>选品速度 · 新人可复制</span>
+          </div>
+        </article>
+
+        <article class="arch-impact-card" data-biz="planning">
+          <div class="arch-impact-card__head">
+            <div class="arch-impact-card__icon" data-icon="search"></div>
+            <h3>匹配企划</h3>
+            <span class="arch-impact-card__tag">PLANNING</span>
+          </div>
+          <div class="arch-impact-card__compare">
+            <div class="arch-impact-card__before">
+              <div class="arch-impact-card__label">传统</div>
+              <p>商品负责人靠 <strong>Excel + 群消息</strong> 同步上新，跨表对数据耗半天</p>
+            </div>
+            <div class="arch-impact-card__arrow" data-icon="arrow-right"></div>
+            <div class="arch-impact-card__after">
+              <div class="arch-impact-card__label arch-impact-card__label--ok">AI 之后</div>
+              <p>商品/SKU/链接全部 <strong>关联到负责人</strong>，上新待办自动推送</p>
+            </div>
+          </div>
+          <div class="arch-impact-card__metric">
+            <strong>↓ 70%</strong>
+            <span>跨系统对数据时间</span>
+          </div>
+        </article>
+
+        <article class="arch-impact-card" data-biz="listing">
+          <div class="arch-impact-card__head">
+            <div class="arch-impact-card__icon" data-icon="trending-up"></div>
+            <h3>自动上架</h3>
+            <span class="arch-impact-card__tag">LISTING</span>
+          </div>
+          <div class="arch-impact-card__compare">
+            <div class="arch-impact-card__before">
+              <div class="arch-impact-card__label">传统</div>
+              <p>运营手动改链接状态，<strong>Excel 报 CBAS</strong>，报名/上新常踩坑</p>
+            </div>
+            <div class="arch-impact-card__arrow" data-icon="arrow-right"></div>
+            <div class="arch-impact-card__after">
+              <div class="arch-impact-card__label arch-impact-card__label--ok">AI 之后</div>
+              <p>面板聚合所有链接状态，<strong>自动提醒</strong>报名/上新节点</p>
+            </div>
+          </div>
+          <div class="arch-impact-card__metric">
+            <strong>↓ 50%</strong>
+            <span>每个运营管的链接数</span>
+          </div>
+        </article>
+
+        <article class="arch-impact-card" data-biz="fulfillment">
+          <div class="arch-impact-card__head">
+            <div class="arch-impact-card__icon" data-icon="truck"></div>
+            <h3>发货管控</h3>
+            <span class="arch-impact-card__tag">FULFILLMENT</span>
+          </div>
+          <div class="arch-impact-card__compare">
+            <div class="arch-impact-card__before">
+              <div class="arch-impact-card__label">传统</div>
+              <p>代发工单 <strong>微信群口头同步</strong>，漏单错单司空见惯</p>
+            </div>
+            <div class="arch-impact-card__arrow" data-icon="arrow-right"></div>
+            <div class="arch-impact-card__after">
+              <div class="arch-impact-card__label arch-impact-card__label--ok">AI 之后</div>
+              <p>工单全生命周期，超时 <strong>自动告警</strong>，追责可追溯</p>
+            </div>
+          </div>
+          <div class="arch-impact-card__metric">
+            <strong>↓ 90%</strong>
+            <span>错单率 · 漏单率</span>
+          </div>
+        </article>
+
+        <article class="arch-impact-card" data-biz="finance">
+          <div class="arch-impact-card__head">
+            <div class="arch-impact-card__icon" data-icon="scale"></div>
+            <h3>财务中枢</h3>
+            <span class="arch-impact-card__tag">FINANCE</span>
+          </div>
+          <div class="arch-impact-card__compare">
+            <div class="arch-impact-card__before">
+              <div class="arch-impact-card__label">传统</div>
+              <p>2 个会计 <strong>1 周</strong> 才能对完 3 个平台数据，差异滞后</p>
+            </div>
+            <div class="arch-impact-card__arrow" data-icon="arrow-right"></div>
+            <div class="arch-impact-card__after">
+              <div class="arch-impact-card__label arch-impact-card__label--ok">AI 之后</div>
+              <p>自动识别 ERP 格式，差异<strong>当天分类</strong>，一键导出报告</p>
+            </div>
+          </div>
+          <div class="arch-impact-card__metric">
+            <strong>↓ 80%</strong>
+            <span>对账时间 · 差异发现</span>
+          </div>
+        </article>
+
+        <article class="arch-impact-card" data-biz="dataops">
+          <div class="arch-impact-card__head">
+            <div class="arch-impact-card__icon" data-icon="bar-chart-3"></div>
+            <h3>数据运营</h3>
+            <span class="arch-impact-card__tag">DATAOPS</span>
+          </div>
+          <div class="arch-impact-card__compare">
+            <div class="arch-impact-card__before">
+              <div class="arch-impact-card__label">传统</div>
+              <p>每周 <strong>手动拉 5 个平台</strong> 数据做透视，写周报耗 1-2 天</p>
+            </div>
+            <div class="arch-impact-card__arrow" data-icon="arrow-right"></div>
+            <div class="arch-impact-card__after">
+              <div class="arch-impact-card__label arch-impact-card__label--ok">AI 之后</div>
+              <p>五部曲 + 看板 <strong>实时归集</strong> 5 维度，周报自动生成</p>
+            </div>
+          </div>
+          <div class="arch-impact-card__metric">
+            <strong>2 天 → 5 分钟</strong>
+            <span>经营周报生成时间</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="arch-impact-sum" data-reveal>
+        <div class="arch-impact-sum__title">算一笔总账：6 大模块叠加后</div>
+        <div class="arch-impact-sum__grid">
+          <div class="arch-impact-sum__item">
+            <strong>~3 人 / 月</strong>
+            <span>财务 + 数据岗节省人力</span>
+          </div>
+          <div class="arch-impact-sum__item">
+            <strong>1 周 → 实时</strong>
+            <span>跨部门协同从延迟到实时</span>
+          </div>
+          <div class="arch-impact-sum__item">
+            <strong>↓ 70%+</strong>
+            <span>重复劳动 / 跨表对数</span>
+          </div>
+          <div class="arch-impact-sum__item">
+            <strong>0 → 1</strong>
+            <span>新人 1 周上手，AI 当老师</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 8 条数据流 ====== -->
+  <section class="arch-flows-section">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">DATA FLOW</span>
+        <h2 class="section__title">8 条核心数据流</h2>
+        <p class="section__desc">从选品结果、订单、退款、成本到权限通知——所有数据都在模块间自动流转。</p>
+      </header>
+
+      <div class="arch-flow-list" data-reveal>
+        <article class="arch-flow-card" data-flow="1">
+          <div class="arch-flow-card__head">
+            <span class="arch-flow-card__num">01</span>
+            <h3>选品 → 匹配企划</h3>
+          </div>
+          <p>21 步选品决策树输出的候选商品，进入企划上新池，等待 CBAS 等级评定与匹配。</p>
+          <code>选品 Agent → 匹配 Agent</code>
+        </article>
+
+        <article class="arch-flow-card" data-flow="2">
+          <div class="arch-flow-card__head">
+            <span class="arch-flow-card__num">02</span>
+            <h3>匹配企划 → 自动上架</h3>
+          </div>
+          <p>候选商品池通过 CBAS 等级判定后，进入运营面板，触发上新/报名流程。</p>
+          <code>匹配 Agent → 上架 Agent</code>
+        </article>
+
+        <article class="arch-flow-card" data-flow="3">
+          <div class="arch-flow-card__head">
+            <span class="arch-flow-card__num">03</span>
+            <h3>自动上架 → 数据运营</h3>
+          </div>
+          <p>链接上架后开始累计销售数据，五部曲 + 经营看板实时归集流量/转化/客单/复购/利润。</p>
+          <code>上架 Agent → 数据 Agent</code>
+        </article>
+
+        <article class="arch-flow-card" data-flow="4">
+          <div class="arch-flow-card__head">
+            <span class="arch-flow-card__num">04</span>
+            <h3>数据运营 → 财务中枢</h3>
+          </div>
+          <p>经营看板的下钻 SKU 毛利与异常波动，自动推送到对账系统的差异分析里。</p>
+          <code>数据 Agent → 财务 Agent</code>
+        </article>
+
+        <article class="arch-flow-card" data-flow="5">
+          <div class="arch-flow-card__head">
+            <span class="arch-flow-card__num">05</span>
+            <h3>财务中枢 → 发货管控</h3>
+          </div>
+          <p>对账差异中识别出的"补单/赠品/平台费"，自动生成补单工单进入代发流程。</p>
+          <code>财务 Agent → 发货 Agent</code>
+        </article>
+
+        <article class="arch-flow-card" data-flow="6">
+          <div class="arch-flow-card__head">
+            <span class="arch-flow-card__num">06</span>
+            <h3>选品 → 财务中枢（成本）</h3>
+          </div>
+          <p>选品环节确定的成本结构，实时同步到对账系统，支撑毛利核算。</p>
+          <code>选品 Agent → 财务 Agent</code>
+        </article>
+
+        <article class="arch-flow-card" data-flow="7">
+          <div class="arch-flow-card__head">
+            <span class="arch-flow-card__num">07</span>
+            <h3>发货 → 选品（反馈闭环）</h3>
+          </div>
+          <p>代发环节识别的售后率/差评率回流到选品决策，影响下一轮选品判断。</p>
+          <code>发货 Agent → 选品 Agent</code>
+        </article>
+
+        <article class="arch-flow-card" data-flow="8">
+          <div class="arch-flow-card__head">
+            <span class="arch-flow-card__num">08</span>
+            <h3>所有模块 → 数据中枢</h3>
+          </div>
+          <p>数据中枢统一身份认证 / 权限 / 公告 / 子系统注册，6 大模块全接入。</p>
+          <code>全部 → 数据中枢</code>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 5 条设计思路 ====== -->
+  <section class="arch-philosophy">
+    <div class="container">
+      <header class="section__head" data-reveal>
+        <span class="section__eyebrow">DESIGN PHILOSOPHY</span>
+        <h2 class="section__title">5 条设计思路</h2>
+        <p class="section__desc">为什么这样切分——AI + ERP 双引擎的核心设计原则。</p>
+      </header>
+
+      <div class="arch-philosophy-grid" data-reveal>
+        <article class="arch-philo-card">
+          <div class="arch-philo-card__num">01</div>
+          <h3>按业务环节切分，而非按技术栈</h3>
+          <p>6 大模块对应电商业务的 6 个核心环节（选品 / 匹配 / 上架 / 发货 / 财务 / 数据），不是按"前端/后端/数据"切。每个模块可以独立交付、独立运维、独立 Agent 化。</p>
+        </article>
+
+        <article class="arch-philo-card">
+          <div class="arch-philo-card__num">02</div>
+          <h3>一个数据中枢，统一身份与权限</h3>
+          <p>数据中枢是整个架构的"总线"——统一身份认证（SSO）、统一权限、统一公告。子系统独立部署但对外是一个系统，Agent 调度也有统一入口。</p>
+        </article>
+
+        <article class="arch-philo-card">
+          <div class="arch-philo-card__num">03</div>
+          <h3>数据驱动决策，形成业务闭环</h3>
+          <p>从选品决策到经营分析再到售后监控，数据在模块间自动流转，决策有据可依，反馈形成闭环。</p>
+        </article>
+
+        <article class="arch-philo-card">
+          <div class="arch-philo-card__num">04</div>
+          <h3>可独立 + 可联动，灰度上线</h3>
+          <p>每个子系统独立部署、独立上线，先单点跑通再接数据流。新功能可灰度，单模块 ROI 可独立验证。</p>
+        </article>
+
+        <article class="arch-philo-card arch-philo-card--ai">
+          <div class="arch-philo-card__num">05</div>
+          <h3>AI Agent 优先：让 AI 跟员工对话</h3>
+          <p>不强迫员工学新系统界面，每个子系统配一个 OpenClaw Agent。员工用自然语言提需求，Agent 理解意图后自动调子系统 API 完成操作——<strong>降低培训成本，提升一线接受度，立即产出收益</strong>。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/icons.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/header.js"></script>
+  <script src="assets/nav.js"></script>
+  <script src="assets/architecture.js"></script>
+  <script>
+    /* 注入 [data-icon] 元素的 SVG */
+    (function () {
+      const iconMap = {
+        'zap': 'zap', 'bot': 'bot', 'trending-up': 'trending-up', 'sparkles': 'sparkles',
+        'target': 'target', 'brain': 'brain', 'arrow-down': 'arrow-down', 'arrow-right': 'arrow-right',
+        'search': 'search', 'truck': 'truck', 'scale': 'scale', 'bar-chart-3': 'bar-chart-3',
+        'check-circle': 'check-circle'
+      };
+      document.querySelectorAll('[data-icon]').forEach(el => {
+        const key = el.getAttribute('data-icon');
+        if (iconMap[key]) {
+          el.innerHTML = window.renderIcon(iconMap[key], 18);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

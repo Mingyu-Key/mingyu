@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>联系 · 阁主作品集</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="description" content="联系阁主：电话/微信 15627375961，电商 ERP / 内部工具 / 选品系统合作咨询。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="联系 · 阁主作品集" />
+  <meta property="og:description" content="联系阁主：电话/微信 15627375961，电商 ERP / 内部工具 / 选品系统合作咨询。" />
+  <meta property="og:image" content="assets/og-image.svg" />
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="contact">
+
+  <section class="contact-page">
+    <div class="container">
+      <header class="section__head section__head--center" data-reveal>
+        <span class="section__eyebrow">CONTACT</span>
+        <h1 class="section__title">欢迎合作 / 交流</h1>
+        <p class="section__desc">如果你在看独立开发者 / 电商系统工程师 / 内部工具研发相关机会，欢迎随时联系。</p>
+      </header>
+
+      <div class="contact-page__cards" data-reveal>
+        <a class="contact-page__card" href="tel:15627375961">
+          <span class="contact-page__icon" id="iconPhone"></span>
+          <span class="contact-page__label">电话 / 微信</span>
+          <span class="contact-page__value">15627375961</span>
+          <span class="contact-page__hint">点击直接拨打</span>
+        </a>
+
+        <div class="contact-page__card contact-page__static">
+          <span class="contact-page__icon" id="iconWechat"></span>
+          <span class="contact-page__label">微信号</span>
+          <span class="contact-page__value">15627375961</span>
+          <span class="contact-page__hint">同号，加微信请备注来意</span>
+        </div>
+
+        <div class="contact-page__card contact-page__static">
+          <span class="contact-page__icon" id="iconWrench"></span>
+          <span class="contact-page__label">可承接方向</span>
+          <span class="contact-page__value">电商 ERP / 内部工具 / 选品系统</span>
+          <span class="contact-page__hint">全流程从设计到上线</span>
+        </div>
+      </div>
+
+      <section class="contact-process" aria-labelledby="contactProcessTitle" data-reveal>
+        <h2 class="contact-process__title" id="contactProcessTitle">合作流程</h2>
+        <ol class="contact-process__steps">
+          <li class="contact-process__step"><span>STEP 01</span><strong>需求对齐</strong></li>
+          <li class="contact-process__step"><span>STEP 02</span><strong>方案设计</strong></li>
+          <li class="contact-process__step"><span>STEP 03</span><strong>开发交付</strong></li>
+          <li class="contact-process__step"><span>STEP 04</span><strong>上线运维</strong></li>
+        </ol>
+      </section>
+    </div>
+  </section>
+
+  <script src="assets/icons.js"></script>
+  <script src="assets/header.js"></script>
+  <script src="assets/nav.js"></script>
+  <script>
+    /* 注入 SVG 图标 */
+    document.getElementById('iconPhone').innerHTML = window.renderIcon('phone', 24);
+    document.getElementById('iconWechat').innerHTML = window.renderIcon('message-circle', 24);
+    document.getElementById('iconWrench').innerHTML = window.renderIcon('wrench', 24);
+
+    /* ===== 3D 视差 ===== */
+    document.querySelectorAll('.contact-page__card').forEach(card => {
+      let rect = null, raf = 0, tx = 0, ty = 0, cx = 0, cy = 0;
+      const MAX = 5;
+      function apply() {
+        cx += (tx - cx) * 0.18;
+        cy += (ty - cy) * 0.18;
+        card.style.transform = `translateY(-4px) rotateY(${cx.toFixed(2)}deg) rotateX(${cy.toFixed(2)}deg)`;
+        if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) raf = requestAnimationFrame(apply);
+        else raf = 0;
+      }
+      card.addEventListener('mouseenter', () => {
+        rect = card.getBoundingClientRect();
+        if (!raf) raf = requestAnimationFrame(apply);
+      });
+      card.addEventListener('mousemove', (e) => {
+        if (!rect) rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        tx = x * MAX; ty = -y * MAX;
+        if (!raf) raf = requestAnimationFrame(apply);
+      });
+      card.addEventListener('mouseleave', () => {
+        tx = 0; ty = 0;
+        if (!raf) raf = requestAnimationFrame(apply);
+        card.style.transform = '';
+        rect = null;
+      });
+    });
+  </script>
+</body>
+</html>
