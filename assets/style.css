@@ -2860,3 +2860,160 @@ a.contact-page__card:hover {
   .arch-center__icon { width: 40px; height: 40px; }
   .arch-center__label { font-size: 16px; }
 }
+
+/* ===== 首页 FDE 成果与交付方法 ===== */
+.hero__identity {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin: 18px 0 -4px;
+  color: var(--c-text-2);
+  font-size: 14px;
+}
+.hero__identity strong { color: var(--c-text); font-size: 16px; }
+.hero__identity span + span::before {
+  content: '·';
+  margin-right: 12px;
+  color: var(--c-text-4);
+}
+.fde-cases {
+  padding: var(--sec-pad-desktop);
+  background: var(--c-bg-soft);
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+}
+.fde-cases__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.fde-case {
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+  padding: 28px;
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.fde-case:hover {
+  transform: translateY(-4px);
+  border-color: var(--c-line-strong);
+  box-shadow: var(--sh-2);
+}
+.fde-case__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--c-text-3);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.fde-case__meta span {
+  color: var(--c-brand);
+  font-family: var(--font-mono);
+}
+.fde-case h3 {
+  margin: 14px 0 12px;
+  color: var(--c-text);
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+}
+.fde-case > p {
+  margin: 0;
+  color: var(--c-text-2);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.fde-case__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 18px 0 22px;
+  list-style: none;
+}
+.fde-case__tags li {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--c-brand-soft);
+  color: var(--c-brand);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.fde-case__result,
+.fde-case__metrics {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px dashed var(--c-line);
+}
+.fde-case__result { display: grid; gap: 4px; }
+.fde-case__result strong,
+.fde-case__metrics strong { color: var(--c-text); font-size: 16px; }
+.fde-case__result span,
+.fde-case__metrics span { color: var(--c-text-3); font-size: 12px; line-height: 1.5; }
+.fde-case__metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fde-case__metrics div { display: grid; gap: 3px; }
+.delivery {
+  padding: var(--sec-pad-desktop);
+  background: var(--c-bg);
+}
+.delivery__steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: delivery;
+}
+.delivery__steps li {
+  position: relative;
+  padding: 20px;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  background: var(--c-bg-tint);
+}
+.delivery__steps li:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  z-index: 1;
+  top: 28px;
+  right: -18px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--c-bg);
+  color: var(--c-brand);
+  font-size: 14px;
+}
+.delivery__steps span {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--c-brand);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+.delivery__steps strong { display: block; color: var(--c-text); font-size: 15px; line-height: 1.45; }
+.delivery__steps p { margin: 8px 0 0; color: var(--c-text-3); font-size: 12.5px; line-height: 1.7; }
+@media (max-width: 1024px) {
+  .fde-cases__grid { grid-template-columns: 1fr; }
+  .fde-case { min-height: 0; }
+  .delivery__steps { grid-template-columns: repeat(2, 1fr); }
+  .delivery__steps li::after { display: none; }
+}
+@media (max-width: 640px) {
+  .hero__identity { margin-top: 14px; font-size: 13px; }
+  .hero__identity strong { font-size: 15px; }
+  .fde-cases, .delivery { padding: var(--sec-pad-mobile); }
+  .fde-case { padding: 22px; }
+  .fde-case h3 { font-size: 18px; }
+  .delivery__steps { grid-template-columns: 1fr; }
+}
