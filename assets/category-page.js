@@ -62,6 +62,8 @@
       var src = shots[i].indexOf('.') > -1
         ? 'assets/screenshots/' + shots[i]
         : 'assets/screenshots/' + w.port + '-' + shots[i] + '.gif';
+      // GIF 已恢复为源文件；使用版本参数避免浏览器继续使用旧的压缩缓存。
+      if (/\.gif$/i.test(src)) src += '?v=source-20260927';
       var altText = (w.title || '') + ' ' + (i + 1);
       html += '<div class="work-detail__carousel-item' + active + '" data-idx="' + i + '">' +
         '<img src="' + src + '" alt="' + altText + '" loading="lazy" decoding="async" onerror="this.parentNode.classList.add(\'is-broken\');var n=this.nextElementSibling;if(n)n.style.display=\'flex\';this.style.display=\'none\';" />' +
