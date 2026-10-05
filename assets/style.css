@@ -3055,14 +3055,18 @@ a.contact-page__card:hover {
 }
 .hero__stat { align-items: flex-start; text-align: left; }
 .hero__stat-num--text { font-size: clamp(22px, 2vw, 30px); white-space: nowrap; }
-.fde-model { padding: 84px 0; background: var(--c-bg); }
-.fde-model__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
-.fde-model__item { position: relative; min-height: 205px; padding: 22px 18px; border: 1px solid var(--c-line); border-radius: var(--r-md); background: linear-gradient(150deg, #fff, var(--c-bg-tint)); transition: transform .25s, box-shadow .25s, border-color .25s; }
-.fde-model__item::after { content: ''; position: absolute; left: 18px; bottom: 0; width: 34px; height: 2px; background: var(--c-brand); opacity: .65; }
-.fde-model__item:hover { transform: translateY(-4px); border-color: rgba(var(--c-brand-rgb), .35); box-shadow: var(--sh-2); }
-.fde-model__item > span { color: var(--c-brand); font-family: var(--font-mono); font-size: 12px; font-weight: 700; }
-.fde-model__item h3 { margin: 28px 0 10px; color: var(--c-text); font-size: 17px; }
+.fde-model { padding: 72px 0; background: var(--c-bg); }
+.fde-model .section__head { margin-bottom: 38px; }
+.fde-model__flow { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.fde-model__track { position: absolute; z-index: 0; top: 18px; left: 8%; right: 8%; height: 2px; overflow: hidden; background: var(--c-line); }
+.fde-model__track span { display: block; width: 28%; height: 100%; background: linear-gradient(90deg, transparent, var(--c-brand), #85b7ff, transparent); animation: fdeFlow 6s ease-in-out infinite; }
+@keyframes fdeFlow { 0% { transform: translateX(-110%); } 100% { transform: translateX(390%); } }
+.fde-model__item { position: relative; z-index: 1; min-height: 180px; padding: 0 18px 18px; border: 1px solid var(--c-line); border-radius: var(--r-md); background: linear-gradient(150deg, #fff, var(--c-bg-tint)); transition: transform .25s, box-shadow .25s, border-color .25s; }
+.fde-model__item:hover { transform: translateY(-3px); border-color: rgba(var(--c-brand-rgb), .35); box-shadow: var(--sh-2); }
+.fde-model__num { display: grid; place-items: center; width: 38px; height: 38px; margin-top: 0; border: 1px solid rgba(var(--c-brand-rgb), .22); border-radius: 50%; background: #fff; color: var(--c-brand); font-family: var(--font-mono); font-size: 11px; font-weight: 700; box-shadow: 0 0 0 5px #fff; }
+.fde-model__item h3 { margin: 18px 0 8px; color: var(--c-text); font-size: 17px; }
 .fde-model__item p { margin: 0; color: var(--c-text-3); font-size: 13px; line-height: 1.75; }
+.fde-model__item small { display: block; margin-top: 14px; color: var(--c-brand); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; }
 
 @media (max-width: 1024px) {
   .hero { padding: 116px 0 56px; }
@@ -3070,7 +3074,8 @@ a.contact-page__card:hover {
   .hero__copy { max-width: 760px; }
   .hero__panel { max-width: 660px; width: 100%; }
   .hero__stats { margin-top: 0; }
-  .fde-model__grid { grid-template-columns: repeat(3, 1fr); }
+  .fde-model__flow { grid-template-columns: repeat(2, 1fr); }
+  .fde-model__track { display: none; }
 }
 @media (max-width: 720px) {
   .hero { padding: 104px 0 48px; }
@@ -3087,10 +3092,15 @@ a.contact-page__card:hover {
   .hero__stat-num { font-size: 27px; }
   .hero__stat-num--text { font-size: 20px; }
   .fde-model { padding: 64px 0; }
-  .fde-model__grid { grid-template-columns: 1fr; gap: 10px; }
-  .fde-model__item { min-height: 0; padding: 18px; }
-  .fde-model__item h3 { margin: 18px 0 7px; }
+  .fde-model__flow { grid-template-columns: 1fr; gap: 12px; }
+  .fde-model__track { display: block; top: 18px; bottom: 44px; left: 18px; right: auto; width: 2px; height: auto; }
+  .fde-model__track span { width: 100%; height: 28%; background: linear-gradient(180deg, transparent, var(--c-brand), #85b7ff, transparent); animation: fdeFlowVertical 6s ease-in-out infinite; }
+  .fde-model__item { min-height: 0; padding: 0 16px 16px 52px; }
+  .fde-model__num { position: absolute; top: 0; left: 0; }
+  .fde-model__item h3 { margin: 5px 0 6px; }
+  .fde-model__item small { margin-top: 8px; }
 }
+@keyframes fdeFlowVertical { 0% { transform: translateY(-110%); } 100% { transform: translateY(450%); } }
 @media (prefers-reduced-motion: reduce) {
   .hero__signal, .hero__panel, .hero__panel::before { animation: none !important; }
 }
