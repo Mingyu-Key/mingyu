@@ -130,21 +130,32 @@ img { max-width: 100%; display: block; }
 /* ===== 全局滚动入场 ===== */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  transform: var(--reveal-from, translate3d(0, 28px, 0));
+  transition: opacity .72s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms), transform .72s cubic-bezier(.2,.7,.2,1) var(--reveal-delay, 0ms);
   will-change: opacity, transform;
   /* Safety: 1.5s 后不管 JS 怎么, 强制显示 (兜底 IntersectionObserver 不触发的情况) */
   animation: revealSafety 1.5s ease-out forwards;
 }
+[data-reveal="left"] { --reveal-from: translate3d(-30px, 0, 0); }
+[data-reveal="right"] { --reveal-from: translate3d(30px, 0, 0); }
+[data-reveal="scale"] { --reveal-from: scale(.96); }
 @keyframes revealSafety {
-  0%, 30%  { opacity: 0; transform: translateY(40px); }
-  100%     { opacity: 1; transform: translateY(0); }
+  0%, 30%  { opacity: 0; transform: var(--reveal-from, translate3d(0, 28px, 0)); }
+  100%     { opacity: 1; transform: none; }
 }
 [data-reveal].is-in {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
   animation: none;  /* JS 触发后, 关掉 safety, 走 transition */
 }
+/* 同一组卡片采用短间隔错峰，形成连续节奏而不是整排同时弹出 */
+.fde-model__item:nth-of-type(2) { --reveal-delay: 90ms; }
+.fde-model__item:nth-of-type(3) { --reveal-delay: 180ms; }
+.fde-model__item:nth-of-type(4) { --reveal-delay: 270ms; }
+.fde-case:nth-child(2) { --reveal-delay: 110ms; }
+.fde-case:nth-child(3) { --reveal-delay: 220ms; }
+.industry-card:nth-child(2) { --reveal-delay: 100ms; }
+.industry-card:nth-child(3) { --reveal-delay: 200ms; }
 
 /* ===== 顶部导航 ===== */
 .nav {
@@ -1638,7 +1649,7 @@ a.contact-page__card:hover {
   .work-detail__inner, .cat-card, .skill-card, .cat-hero__icon {
     transform: none !important;
   }
-  [data-reveal] { opacity: 1; transform: none; }
+  [data-reveal] { opacity: 1; transform: none; animation: none; transition: none; }
   .page-bg__shape { animation: none !important; }
 }
 
