@@ -16,12 +16,8 @@
       children: [
         { id: 'architecture', label: '作品架构 & 思路', href: 'architecture.html', special: true },
         { divider: true },
-        { id: 'op',        label: '运营',  href: 'op.html',        color: '#3b82f6' },
-        { id: 'purchase',  label: '采购',  href: 'purchase.html',  color: '#8b5cf6' },
-        { id: 'assistant', label: '助理',  href: 'assistant.html', color: '#10b981' },
-        { id: 'finance',   label: '财务',  href: 'finance.html',   color: '#f59e0b' },
-        { id: 'cs',        label: '客服',  href: 'cs.html',        color: '#ef4444' },
-        { id: 'shared',    label: '公共',  href: 'shared.html',    color: '#64748b' }
+        { id: 'retail', label: '互联网零售业', href: 'retail.html', color: '#2563eb' },
+        { id: 'manufacturing', label: '制造业', href: 'manufacturing.html', color: '#0f766e' }
       ]
     },
     { id: 'contact', label: '联系', href: 'contact.html' }
@@ -40,7 +36,8 @@
         <nav class="nav__links" id="navLinks" aria-label="主导航">
           ${NAV_ITEMS.map(item => {
             if (item.children) {
-              const childActive = item.children.some(c => c.id === active);
+              const retailPages = ['retail', 'op', 'purchase', 'assistant', 'finance', 'cs', 'shared'];
+              const childActive = item.children.some(c => c.id === active || (c.id === 'retail' && retailPages.includes(active)));
               return `
                 <div class="nav__item nav__item--dd" data-dd="works">
                   <button class="nav__link nav__link--dd ${childActive ? 'is-active' : ''}" type="button" aria-haspopup="true" aria-expanded="false">
