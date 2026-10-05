@@ -2983,12 +2983,12 @@ a.contact-page__card:hover {
 }
 .hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(350px, .88fr);
-  gap: 40px 72px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  align-items: start;
   text-align: left;
 }
-.hero__copy { max-width: 710px; }
+.hero__copy { max-width: 820px; }
 .hero__eyebrow { margin-bottom: 20px; }
 .hero__identity { margin: 0 0 20px; }
 .hero__title { margin-bottom: 20px; font-size: clamp(42px, 5vw, 66px); }
@@ -3000,57 +3000,11 @@ a.contact-page__card:hover {
 }
 .hero__sub { max-width: 660px; margin: 0 0 32px; font-size: 16.5px; }
 .hero__cta { justify-content: flex-start; margin: 0; }
-.hero__panel {
-  position: relative;
-  overflow: hidden;
-  padding: 0;
-  color: #eaf2ff;
-  border: 1px solid rgba(120, 181, 255, .26);
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at 100% 0%, rgba(46, 127, 255, .35), transparent 42%),
-    linear-gradient(145deg, #101c34, #0b1427 72%);
-  box-shadow: 0 26px 70px rgba(15, 37, 79, .2);
-  animation: panelIn .85s .18s both;
-}
-.hero__panel::before {
-  content: '';
-  position: absolute;
-  inset: -120% -30%;
-  background: linear-gradient(105deg, transparent 42%, rgba(161, 207, 255, .13) 50%, transparent 58%);
-  transform: translateX(-62%);
-  animation: panelScan 7s 1.4s ease-in-out infinite;
-  pointer-events: none;
-}
-@keyframes panelIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes panelScan { 0%, 30% { transform: translateX(-62%); } 55%, 100% { transform: translateX(64%); } }
-.hero__panel-head,
-.hero__panel-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 15px 20px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: .06em;
-}
-.hero__panel-head { border-bottom: 1px solid rgba(174, 205, 255, .16); color: #a7c9ff; }
-.hero__panel-head b { display: inline-flex; align-items: center; gap: 6px; color: #9ce6bd; font-size: 10px; font-weight: 600; white-space: nowrap; }
-.hero__panel-head i, .hero__panel-foot i { width: 6px; height: 6px; border-radius: 50%; background: #55d68c; box-shadow: 0 0 0 4px rgba(85, 214, 140, .1); }
-.hero__panel-body { padding: 8px 20px; }
-.hero__panel-row { display: grid; grid-template-columns: 29px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid rgba(174, 205, 255, .12); }
-.hero__panel-row:last-child { border-bottom: 0; }
-.hero__panel-row > span { color: #6aa7ff; font-family: var(--font-mono); font-size: 11px; padding-top: 3px; }
-.hero__panel-row div { display: grid; gap: 5px; }
-.hero__panel-row strong { color: #fff; font-size: 14px; font-weight: 650; }
-.hero__panel-row small { color: #afbdd6; font-size: 12px; line-height: 1.55; }
-.hero__panel-foot { justify-content: flex-start; color: #a7b9d6; border-top: 1px solid rgba(174, 205, 255, .12); letter-spacing: .02em; }
 .hero__stats {
   grid-column: 1 / -1;
   max-width: none;
   width: 100%;
-  margin: 0;
+  margin: 44px 0 0;
   background: rgba(255, 255, 255, .72);
 }
 .hero__stat { align-items: flex-start; text-align: left; }
@@ -3070,25 +3024,21 @@ a.contact-page__card:hover {
 
 @media (max-width: 1024px) {
   .hero { padding: 116px 0 56px; }
-  .hero__inner { grid-template-columns: 1fr; gap: 34px; }
+  .hero__inner { grid-template-columns: 1fr; gap: 0; }
   .hero__copy { max-width: 760px; }
-  .hero__panel { max-width: 660px; width: 100%; }
-  .hero__stats { margin-top: 0; }
+  .hero__stats { margin-top: 38px; }
   .fde-model__flow { grid-template-columns: repeat(2, 1fr); }
   .fde-model__track { display: none; }
 }
 @media (max-width: 720px) {
   .hero { padding: 104px 0 48px; }
-  .hero__inner { gap: 28px; }
+  .hero__inner { gap: 0; }
   .hero__eyebrow { font-size: 10px; padding: 6px 10px; letter-spacing: .015em; }
   .hero__identity { margin-bottom: 16px; }
   .hero__title { font-size: clamp(36px, 10vw, 47px); line-height: 1.14; }
   .hero__title-line + .hero__title-line { margin-top: 3px; }
   .hero__sub { font-size: 15px; margin-bottom: 26px; }
-  .hero__panel-head, .hero__panel-foot { padding-left: 16px; padding-right: 16px; }
-  .hero__panel-body { padding-left: 16px; padding-right: 16px; }
-  .hero__panel-row { padding: 14px 0; }
-  .hero__stats { padding: 20px; }
+  .hero__stats { margin-top: 32px; padding: 20px; }
   .hero__stat-num { font-size: 27px; }
   .hero__stat-num--text { font-size: 20px; }
   .fde-model { padding: 64px 0; }
@@ -3102,7 +3052,7 @@ a.contact-page__card:hover {
 }
 @keyframes fdeFlowVertical { 0% { transform: translateY(-110%); } 100% { transform: translateY(450%); } }
 @media (prefers-reduced-motion: reduce) {
-  .hero__signal, .hero__panel, .hero__panel::before { animation: none !important; }
+  .hero__signal { animation: none !important; }
 }
 
 /* ===== 行业入口与行业模板页 ===== */
